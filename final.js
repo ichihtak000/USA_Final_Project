@@ -64,7 +64,7 @@ if(navigator.geolocation){
 	// [第3引数] オプション
 	{
 	    "enableHighAccuracy": true,
-	    "timeout": 8000,
+	    "timeout": 1000,
 	    "maximumAge": 2000,
 	}
 
