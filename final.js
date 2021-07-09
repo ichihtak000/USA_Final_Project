@@ -135,16 +135,14 @@
       }else{
       return 'still';
       }
-         
-  //    if(xmax > 1){
-  //	return 'warlking';
-  //    }else{
-  //	return 'still';
-  //    }
-  
+        
   }
 
-  var map = L.map('map');
+
+//位置情報とマッピング
+
+
+var map = L.map('map');
 // OpenStreetMapタイルレイヤーを追加する
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(map);
 
@@ -153,8 +151,8 @@ if(navigator.geolocation){
     navigator.geolocation.watchPosition(
 	function(position){
 	    var data = position.coords;
-	    var lat = position.coords.latitude.toFixed(1);
-	    var lng = position.coords.longitude.toFixed(1);
+	    var lat = position.coords.latitude;
+	    var lng = position.coords.longitude;
 	    var accLatlng = position.coords.accuracy;
 	    var alt = position.coords.altitude;
 	    var accAlt = position.coords.altitudeAccuracy;
@@ -174,7 +172,7 @@ if(navigator.geolocation){
 	    map.setView([lat, lng], 17);
 	    // L.marker([lat, lng]).addTo(map);
         
-        L.marker([lat+ran, lng+ran]).addTo(map);
+        //L.marker([lat, lng]).addTo(map);
 	},
 
 	function(error)
